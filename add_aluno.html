@@ -1,0 +1,28 @@
+<html>
+  <head>adicionar aluno</head>
+  <body>
+  	Nome do aluno:<br>
+  	<input type = "text" name = "nome"><br>
+    Curso do aluno:<br>
+  	<input type = "text" name ="curso"><br>
+    Email do aluno:<br>
+    <input type = "email" name = "usremail"><br>
+    <input type = "submit" name = "adicionar">
+
+    <?php
+    
+    	$conn = new mysqli("localhost", "root",);
+
+    	if($conn->connect_error)
+    		die("connection failed".mysqli_connect_error());
+    	$sql = "INSERT INTO cursos(id, nome_curso, Status_curso) VALUES (,$_POST[nome],)";
+
+    	if ($conn->query($sql)===TRUE)
+    		echo "curso adicionado!";
+    	else
+    		echo "tente novamente!";
+    	$conn->close();
+
+    ?>
+  </body>
+</html>
